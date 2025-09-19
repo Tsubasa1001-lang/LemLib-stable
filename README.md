@@ -65,6 +65,15 @@ In other words, you need to know how LemLib works. You don't need to know the de
 ## Documentation
 Check out the [Documentation](https://lemlib.readthedocs.io/en/v0.5.0/index.html).
 
+## Robot Configuration UI
+This template now ships with an interactive command-line UI that generates `src/robot.cpp` and `include/robot.hpp` from a JSON configuration file.
+
+1. Run `python3 tools/robot_configurator.py` (or execute the script directly on Linux/macOS).
+2. Follow the on-screen menu to edit motors, motor groups, sensors, drivetrain parameters, and other hardware settings.
+3. Choose option `14` to save your changes. The script writes the configuration to `tools/robot_config.json` and regenerates the corresponding source files automatically.
+
+You can commit the generated JSON file along with your code to keep hardware settings under version control.
+
 ## Contributing
 Want to contribute? Please read [CONTRIBUTING.md](https://github.com/LemLib/LemLib/blob/master/.github/CONTRIBUTING.md) and join our [Discord server](https://discord.gg/pCHr7XZUTj).
 
