@@ -1,0 +1,318 @@
+{
+  "motors": [
+    {
+      "name": "LeftFront",
+      "port": -1,
+      "gearset": "pros::v5::MotorGears::blue",
+      "comment": "左前方馬達",
+      "enabled": true
+    },
+    {
+      "name": "LeftBack",
+      "port": -3,
+      "gearset": "pros::v5::MotorGears::blue",
+      "comment": "左後方馬達",
+      "enabled": true
+    },
+    {
+      "name": "RightFront",
+      "port": 2,
+      "gearset": "pros::v5::MotorGears::blue",
+      "comment": "右前方馬達",
+      "enabled": true
+    },
+    {
+      "name": "RightBack",
+      "port": 4,
+      "gearset": "pros::v5::MotorGears::blue",
+      "comment": "右後方馬達",
+      "enabled": true
+    },
+    {
+      "name": "FrontIntake",
+      "port": -15,
+      "gearset": "pros::v5::MotorGears::blue",
+      "comment": "前方 intake 馬達",
+      "enabled": true
+    }
+  ],
+  "motor_groups": [
+    {
+      "name": "LeftGroup",
+      "ports": [
+        -5,
+        6,
+        -7
+      ],
+      "gearset": "pros::v5::MotorGears::blue",
+      "units": "pros::v5::MotorUnits::degrees",
+      "comment": "左側馬達組設定",
+      "enabled": true
+    },
+    {
+      "name": "RightGroup",
+      "ports": [
+        8,
+        -9,
+        10
+      ],
+      "gearset": "pros::v5::MotorGears::blue",
+      "units": "pros::v5::MotorUnits::degrees",
+      "comment": "右側馬達組設定",
+      "enabled": true
+    },
+    {
+      "name": "BackIntake",
+      "ports": [
+        12,
+        -13,
+        -14
+      ],
+      "gearset": "pros::v5::MotorGears::blue",
+      "units": "pros::v5::MotorUnits::degrees",
+      "comment": "後方 intake 馬達群組",
+      "enabled": true
+    }
+  ],
+  "drivetrain": {
+    "name": "drivetrain",
+    "left_group": "LeftGroup",
+    "right_group": "RightGroup",
+    "track_width": 10,
+    "wheel_type": "lemlib::Omniwheel::NEW_275",
+    "rpm": 480,
+    "horizontal_drift": 2,
+    "comment": "底盤配置",
+    "enabled": true
+  },
+  "sensors": [
+    {
+      "name": "Op",
+      "type": "pros::Optical",
+      "args": [
+        11
+      ],
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "GPS",
+      "type": "pros::Gps",
+      "args": [
+        20,
+        -100,
+        70
+      ],
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "FDistance",
+      "type": "pros::Distance",
+      "args": [
+        21
+      ],
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "imu",
+      "type": "pros::Imu",
+      "args": [
+        16
+      ],
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "horizontal_encoder",
+      "type": "pros::Rotation",
+      "args": [
+        18
+      ],
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "left_vertical_encoder",
+      "type": "pros::Rotation",
+      "args": [
+        17
+      ],
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "right_vertical_encoder",
+      "type": "pros::Rotation",
+      "args": [
+        -19
+      ],
+      "comment": "",
+      "enabled": true
+    }
+  ],
+  "controllers": [
+    {
+      "name": "Player1",
+      "type": "pros::Controller",
+      "args": [
+        "pros::E_CONTROLLER_MASTER"
+      ],
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "Player2",
+      "type": "pros::Controller",
+      "args": [
+        "pros::E_CONTROLLER_PARTNER"
+      ],
+      "comment": "",
+      "enabled": true
+    }
+  ],
+  "expo_drive_curve": {
+    "name": "expoCurve",
+    "deadband": 10,
+    "min_output": 10,
+    "curve": 1.02,
+    "comment": "控制搖桿輸入的 Expo 曲線（死區10，最小輸出10，曲線增益1.02，可依手感調整）"
+  },
+  "digital_outputs": [
+    {
+      "name": "Clamp",
+      "port": "'A'",
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "Arm1stg",
+      "port": "'B'",
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "Arm2stg",
+      "port": "'C'",
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "Arm2stgBack",
+      "port": "'D'",
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "Wing",
+      "port": "'E'",
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "Climb",
+      "port": "'F'",
+      "comment": "",
+      "enabled": true
+    },
+    {
+      "name": "IntakeUp",
+      "port": "'G'",
+      "comment": "",
+      "enabled": true
+    }
+  ],
+  "tracking_wheels": [
+    {
+      "name": "horizontal_tracking_wheel",
+      "encoder": "horizontal_encoder",
+      "wheel_enum": "lemlib::Omniwheel::NEW_2",
+      "offset": 0,
+      "comment": "horizontal tracking wheel",
+      "enabled": true
+    },
+    {
+      "name": "left_vertical_tracking_wheel",
+      "encoder": "left_vertical_encoder",
+      "wheel_enum": "lemlib::Omniwheel::NEW_2",
+      "offset": -2.5,
+      "comment": "vertical tracking wheel",
+      "enabled": true
+    }
+  ],
+  "odom_sensors": {
+    "name": "sensors",
+    "vertical1": "left_vertical_tracking_wheel",
+    "vertical2": null,
+    "horizontal1": "horizontal_tracking_wheel",
+    "horizontal2": null,
+    "inertial": "imu"
+  },
+  "controller_settings": {
+    "lateral": {
+      "name": "lateral_controller",
+      "kP": 20,
+      "kI": 0,
+      "kD": 3,
+      "anti_windup": 3,
+      "small_error": 1,
+      "small_timeout": 100,
+      "large_error": 3,
+      "large_timeout": 500,
+      "slew": 20
+    },
+    "angular": {
+      "name": "angular_controller",
+      "kP": 8,
+      "kI": 0,
+      "kD": 10,
+      "anti_windup": 3,
+      "small_error": 1,
+      "small_timeout": 100,
+      "large_error": 3,
+      "large_timeout": 500,
+      "slew": 0
+    }
+  },
+  "chassis": {
+    "name": "chassis",
+    "drivetrain": "drivetrain",
+    "lateral": "lateral_controller",
+    "angular": "angular_controller",
+    "sensors": "sensors"
+  },
+  "pid": [
+    {
+      "name": "distancePID",
+      "kP": 0.5,
+      "kI": 0,
+      "kD": 0,
+      "comment": "請根據實際需求調整參數",
+      "enabled": true
+    },
+    {
+      "name": "anglePID",
+      "kP": 2.0,
+      "kI": 0,
+      "kD": 0,
+      "comment": "請根據實際需求調整參數",
+      "enabled": true
+    }
+  ],
+  "x_drive": {
+    "name": "XDrive",
+    "motors": [
+      "LeftFront",
+      "RightFront",
+      "LeftBack",
+      "RightBack"
+    ],
+    "length": 10,
+    "width": 4,
+    "wheel_diameter": 360,
+    "drift": 2,
+    "sensors": "sensors",
+    "comment": "X-Drive 底盤實例"
+  }
+}
